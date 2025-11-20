@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>داشبورد سوپرادمین</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>👑 داشبورد سوپرادمین</h1>
+        <p>شماره همراه: <span id="user-phone"></span></p>
+        <p>به پنل مدیریت ارشد خوش آمدید. دسترسی‌های شما:</p>
+        <ul style="text-align: right; margin: 1rem 0;">
+            <li>دسترسی کامل به سیستم</li>
+            <li>مدیریت مدیران</li>
+            <li>تنظیمات پیشرفته</li>
+        </ul>
+        <button onclick="logout()" class="btn-primary">خروج از سیستم</button>
+    </div>
+    <script>
+        document.getElementById('user-phone').textContent = localStorage.getItem('user_phone') || 'نامشخص';
+        
+        function logout() {
+            localStorage.clear();
+            window.location.href = '../index.html';
+        }
+    </script>
+</body>
+</html>
